@@ -183,8 +183,9 @@
 
       <!-- App mockup browser window -->
       <div class="built-mockup">
-        <img src="Asset/Dashboard.svg" alt="">
+        <img src="Asset/Dashboard.png" alt="" style="width: 100%; height: auto; display: block;">
       </div>
+    </div>
   </section>
 
 
@@ -416,14 +417,31 @@
     });
 
     // What-card illustration swap on hover
+    const highlightCard = document.querySelector('.what-card.highlight');
+    const highlightImg = highlightCard.querySelector('.what-card-icon');
+    const highlightDefaultSrc = highlightImg.getAttribute('src');
+    const highlightDimSrc = highlightDefaultSrc.replace(' (2)', '');
+
     document.querySelectorAll('.what-card:not(.highlight)').forEach(card => {
       const img = card.querySelector('.what-card-icon');
       const defaultSrc = img.getAttribute('src');
       const hoverSrc = defaultSrc.replace(/\.svg$/, ' (2).svg');
-
       const defaultHeight = img.style.height;
-      card.addEventListener('mouseenter', () => { img.src = hoverSrc; img.style.height = '260px'; });
-      card.addEventListener('mouseleave', () => { img.src = defaultSrc; img.style.height = defaultHeight; });
+
+      card.addEventListener('mouseenter', () => {
+        img.src = hoverSrc;
+        img.style.height = '260px';
+        highlightCard.classList.add('dimmed');
+        highlightImg.src = highlightDimSrc;
+        highlightImg.style.height = '164px';
+      });
+      card.addEventListener('mouseleave', () => {
+        img.src = defaultSrc;
+        img.style.height = defaultHeight;
+        highlightCard.classList.remove('dimmed');
+        highlightImg.src = highlightDefaultSrc;
+        highlightImg.style.height = '260px';
+      });
     });
   </script>
 </body>

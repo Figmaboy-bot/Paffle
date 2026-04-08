@@ -65,6 +65,8 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 10;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .navbar-logo {
@@ -124,11 +126,14 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   width: 100%;
   padding: 60px 60px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-heading-inner {
@@ -161,6 +166,8 @@ body {
   width: 100%;
   padding: 100px 64px;
   background: #fff;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .section-inner {
@@ -236,6 +243,8 @@ body {
   width: 100%;
   padding: 100px 64px;
   background: #fff;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .what-grid {
@@ -269,6 +278,21 @@ body {
 .what-card.highlight,
 .what-card:not(.highlight):hover {
   background: var(--brand);
+}
+
+.what-card.highlight.dimmed {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.what-card.highlight.dimmed .what-card-title {
+  color: #000;
+}
+
+.what-card.highlight.dimmed .what-card-desc {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, max-height 0.3s ease;
 }
 
 .what-card:not(.highlight):hover .what-card-title {
@@ -333,6 +357,8 @@ body {
   width: 100%;
   padding: 100px 64px;
   background: #fff;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .built-inner {
@@ -372,35 +398,7 @@ body {
   border: none;
 }
 
-.built-mockup {
-  width: 100%;
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
 
-.built-mockup-browser {
-  width: 100%;
-  height: 77px;
-  background: #dee1e6;
-  display: flex;
-  align-items: flex-end;
-  padding: 0 0 0 21px;
-}
-
-.built-mockup-dots {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  height: 42px;
-}
-
-.built-mockup-dot {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 
 /* ─── THE ONLY CARD ─────────────────────────────────── */
 .section-card {
@@ -550,6 +548,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 60%;
+  max-width: 1000px;
 }
 
 .faq-item {
