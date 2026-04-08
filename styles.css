@@ -263,10 +263,29 @@ body {
   align-items: flex-start;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 0;
+  transition: background 0.25s ease;
 }
 
-.what-card.highlight {
+.what-card.highlight,
+.what-card:not(.highlight):hover {
   background: var(--brand);
+}
+
+.what-card:not(.highlight):hover .what-card-title {
+  color: #fff;
+}
+
+.what-card:not(.highlight) .what-card-desc {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, max-height 0.3s ease;
+}
+
+.what-card:not(.highlight):hover .what-card-desc {
+  opacity: 1;
+  max-height: 120px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .what-card-icon {
