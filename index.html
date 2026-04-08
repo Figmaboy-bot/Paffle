@@ -6,35 +6,35 @@
   <meta name="viewport" content="width=1728" />
   <title>Paffle – The Future of Global Money</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="Asset/favicon.png" />
 </head>
 
 <body>
+
+  <!-- Navbar – must be outside .hero so it isn't clipped by its stacking context -->
+  <nav class="navbar">
+    <img class="navbar-logo" src="Asset/Logo.svg" alt="Paffle" />
+
+    <div class="navbar-menus">
+      <a class="navbar-menu-item" href="#">Products</a>
+      <a class="navbar-menu-item" href="#">Affiliate and Rewards</a>
+      <a class="navbar-menu-item" href="#">About</a>
+    </div>
+
+    <a class="navbar-cta" href="#">
+      <span class="navbar-cta-icons">
+        <img class="navbar-cta-icon" src="Asset/famicons_logo-apple-appstore.svg" alt="App Store" />
+        <img class="navbar-cta-icon" src="Asset/ion_logo-google-playstore.svg" alt="Play Store" />
+      </span>
+      Download App
+    </a>
+  </nav>
 
   <!-- ═══════════════════════════════════════════════════
      SECTION 1 · HERO
 ═══════════════════════════════════════════════════ -->
   <section class="hero">
     <img class="hero-bg-photo" src="Asset/bg.jpg" alt="">
-
-
-    <!-- Navbar -->
-    <nav class="navbar">
-      <img class="navbar-logo" src="Asset/Logo.svg" alt="Paffle" />
-
-      <div class="navbar-menus">
-        <a class="navbar-menu-item" href="#">Products</a>
-        <a class="navbar-menu-item" href="#">Affiliate and Rewards</a>
-        <a class="navbar-menu-item" href="#">About</a>
-      </div>
-
-      <a class="navbar-cta" href="#">
-        <span class="navbar-cta-icons">
-          <img class="navbar-cta-icon" src="Asset/famicons_logo-apple-appstore.svg" alt="App Store" />
-          <img class="navbar-cta-icon" src="Asset/ion_logo-google-playstore.svg" alt="Play Store" />
-        </span>
-        Download App
-      </a>
-    </nav>
 
     <!-- Hero Heading -->
     <div class="hero-heading">
@@ -406,6 +406,16 @@
   </footer>
 
   <script>
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
     // FAQ accordion
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', () => {
