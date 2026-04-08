@@ -159,7 +159,7 @@ body {
 /* ─── WHO USES PAFFLE ───────────────────────────────── */
 .section-who {
   width: 100%;
-  padding: 164px 64px;
+  padding: 100px 64px;
   background: #fff;
 }
 
@@ -172,8 +172,8 @@ body {
 }
 
 .section-title {
-  font-size: 80px;
-  font-weight: 510;
+  font-size: 64px;
+  font-weight: 500;
   color: #000;
   line-height: 80px;
   letter-spacing: -1.6px;
@@ -196,7 +196,7 @@ body {
 .who-card {
   position: relative;
   flex: 1;
-  height: 700px;
+  height: 600px;
   border-radius: 32px;
   border: 2px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
@@ -225,7 +225,7 @@ body {
 }
 
 .who-card-label {
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 510;
   color: #fff;
   white-space: nowrap;
@@ -234,7 +234,7 @@ body {
 /* ─── WHAT YOU CAN DO ───────────────────────────────── */
 .section-what {
   width: 100%;
-  padding: 164px 100px;
+  padding: 100px 64px;
   background: #fff;
 }
 
@@ -279,6 +279,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  align-content: flex-start;
 }
 
 .what-card-title {
@@ -287,16 +288,17 @@ body {
   color: #000;
   line-height: 48px;
   letter-spacing: -0.8px;
+  width: auto;
 }
 
 .what-card.highlight .what-card-title {
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 
 .what-card-desc {
   font-size: 20px;
-  font-weight: 510;
+  font-weight: 500;
   color: rgba(0, 0, 0, 0.6);
   line-height: 28px;
   letter-spacing: -0.4px;
@@ -310,7 +312,7 @@ body {
 /* ─── PAFFLE IS BUILT FOR EVERYONE ─────────────────── */
 .section-built {
   width: 100%;
-  padding: 164px 100px;
+  padding: 100px 64px;
   background: #fff;
 }
 
@@ -342,11 +344,13 @@ body {
 .built-tab.active {
   background: var(--brand);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
 }
 
 .built-tab.inactive {
   color: var(--brand);
+  background-color: transparent;
+  border: none;
 }
 
 .built-mockup {
@@ -519,20 +523,19 @@ body {
 /* ─── FAQ ───────────────────────────────────────────── */
 .section-faq {
   width: 100%;
-  padding: 164px 100px;
+  padding: 100px 64px;
   background: #fff;
 }
 
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   width: 60%;
 }
 
 .faq-item {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 32px 24px;
+  padding: 24px;
   cursor: pointer;
   overflow: hidden;
 }
@@ -557,10 +560,32 @@ body {
   height: 20px;
   object-fit: contain;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-.faq-item-icon.open {
+.faq-item.open .faq-item-icon {
   transform: rotate(45deg);
+}
+
+.faq-item-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-item.open .faq-item-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-item-answer p {
+  overflow: hidden;
+  padding-top: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 28px;
+  letter-spacing: -0.3px;
+  max-width: 680px;
 }
 
 /* ─── CTA SECTION ───────────────────────────────────── */

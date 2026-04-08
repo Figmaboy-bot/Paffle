@@ -262,39 +262,49 @@
       <h2 class="section-title">Frequently Asked Questions</h2>
 
       <div class="faq-list">
-        <div class="faq-item">
+        <div class="faq-item open">
           <div class="faq-item-header">
             <p class="faq-item-question">What is Paffle and how does it work?</p>
-            <img class="faq-item-icon open"
-              src="https://www.figma.com/api/mcp/asset/af0883ba-c35c-47ee-b868-77f649a976c2" alt="+" />
+            <img class="faq-item-icon" src="https://www.figma.com/api/mcp/asset/af0883ba-c35c-47ee-b868-77f649a976c2" alt="+" />
+          </div>
+          <div class="faq-item-answer">
+            <p>Paffle is a global financial platform that lets you bank, pay, and manage crypto across borders — all in one app. Sign up, get a virtual US bank account, and start sending or receiving money worldwide within minutes.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-item-header">
             <p class="faq-item-question">Who can use Paffle?</p>
-            <img class="faq-item-icon" src="https://www.figma.com/api/mcp/asset/05fa9b47-6003-4431-a93b-c04c41e6e3ba"
-              alt="+" />
+            <img class="faq-item-icon" src="https://www.figma.com/api/mcp/asset/05fa9b47-6003-4431-a93b-c04c41e6e3ba" alt="+" />
+          </div>
+          <div class="faq-item-answer">
+            <p>Paffle is built for freelancers, expats, exporters, and businesses that operate across borders. Whether you're receiving international payments or managing a global team, Paffle has you covered.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-item-header">
             <p class="faq-item-question">How do I get a virtual US bank account?</p>
-            <img class="faq-item-icon" src="https://www.figma.com/api/mcp/asset/05fa9b47-6003-4431-a93b-c04c41e6e3ba"
-              alt="+" />
+            <img class="faq-item-icon" src="https://www.figma.com/api/mcp/asset/05fa9b47-6003-4431-a93b-c04c41e6e3ba" alt="+" />
+          </div>
+          <div class="faq-item-answer">
+            <p>After signing up and completing identity verification, Paffle instantly assigns you a US routing and account number. You can share it with clients or platforms to receive USD payments just like a local.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-item-header">
             <p class="faq-item-question">What currencies does Paffle support?</p>
-            <img class="faq-item-icon" src="https://www.figma.com/api/mcp/asset/05fa9b47-6003-4431-a93b-c04c41e6e3ba"
-              alt="+" />
+            <img class="faq-item-icon" src="https://www.figma.com/api/mcp/asset/05fa9b47-6003-4431-a93b-c04c41e6e3ba" alt="+" />
+          </div>
+          <div class="faq-item-answer">
+            <p>Paffle supports a wide range of fiat currencies for transfers and payments, as well as major stablecoins and cryptocurrencies including USDT, USDC, and BTC. Real-time conversion is available at competitive rates.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-item-header">
             <p class="faq-item-question">Is Paffle available in my country?</p>
-            <img class="faq-item-icon" src="https://www.figma.com/api/mcp/asset/05fa9b47-6003-4431-a93b-c04c41e6e3ba"
-              alt="+" />
+            <img class="faq-item-icon" src="https://www.figma.com/api/mcp/asset/05fa9b47-6003-4431-a93b-c04c41e6e3ba" alt="+" />
+          </div>
+          <div class="faq-item-answer">
+            <p>Paffle is available in most countries worldwide. Visit our website or download the app to check availability in your region. We're continuously expanding our coverage to reach more global citizens.</p>
           </div>
         </div>
       </div>
@@ -375,6 +385,15 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
 </body>
 
 </html>
