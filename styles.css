@@ -182,7 +182,7 @@ body {
   color: rgba(255, 255, 255, 0.8);
   line-height: 40px;
   letter-spacing: -0.72px;
-  width: 700px;
+  width: 500px;
 }
 
 /* ─── WHO USES PAFFLE ───────────────────────────────── */
@@ -902,7 +902,7 @@ body {
     font-size: 22px;
     line-height: 32px;
     width: auto;
-    max-width: 520px;
+    max-width: 350px;
   }
 
   .section-title {
